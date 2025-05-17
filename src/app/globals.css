@@ -19,8 +19,66 @@
   }
 }
 
-body {
+/* body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+} */
+
+.game-wrapper {
+  width: 90vw; /* 改為視窗寬度百分比 */
+  height: 90vh; /* 改為視窗高度百分比 */
+  max-width: 1920px; /* 限制最大尺寸 */
+  max-height: 1080px; /* 限制最大尺寸 */
+  aspect-ratio: 16/9; /* 強制保持 16:9 比例 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  position: relative;
+  background: url('/BG.png') center center / cover no-repeat;
+  box-shadow: 0 0 40px #0008;
+  overflow: hidden;
 }
+
+/* 讓 body 也置中，確保 wrapper 垂直水平都在中央 */
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  background: #111; /* 可選：全畫面背景 */
+}
+
+.card-board {
+  width: 80vw;
+  height: 60vh;
+  max-width: 1200px;
+  max-height: 700px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 欄 */
+  grid-template-rows: repeat(2, 1fr);    /* 2 列 */
+  gap: 2vw; /* 或 gap: 24px; */
+  justify-items: center;
+  align-items: center;
+  margin: 0 auto;
+}
+.card-board > div {
+  width: 100%;
+  height: 100%;
+  max-width: 180px;   /* 依最大格子調整 */
+  max-height: 260px;
+  aspect-ratio: 2/3;
+  background: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
