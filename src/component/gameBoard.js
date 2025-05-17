@@ -54,8 +54,28 @@ export default function GameBoard() {
         ))}
       </div>
       {isGameOver && (
-        <div>
-          <h2 style={{ fontSize: '2.5rem', fontWeight: 'bold', margin: '32px 0' }}>
+        <div
+          style={{
+            position: 'fixed',  // 改為固定定位
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',  // 垂直置中
+            alignItems: 'center',      // 水平置中
+            backgroundColor: 'rgba(0, 0, 0, 0.5)',  // 半透明背景
+            zIndex: 1000
+          }}
+        >
+          <h2 style={{ 
+            fontSize: '2.5rem', 
+            fontWeight: 'bold', 
+            margin: '32px 0',
+            color: 'white',  // 文字改為白色
+            textAlign: 'center'  // 文字置中
+          }}>
             {isSuccess ? '🎉 全部配對成功！' : '💥 遊戲失敗！'}
           </h2>
           <button
@@ -68,7 +88,8 @@ export default function GameBoard() {
               background: '#4f8cff',
               color: '#fff',
               border: 'none',
-              cursor: 'pointer'
+              cursor: 'pointer',
+              width: 'auto'  // 防止按鈕被壓縮
             }}
           >
             再玩一次
@@ -78,6 +99,7 @@ export default function GameBoard() {
     </div>
   );
 }
+
 
 
 // 'use client';
