@@ -76,7 +76,7 @@ export default function GameBoard() {
             color: 'white',  // 文字改為白色
             textAlign: 'center'  // 文字置中
           }}>
-            {isSuccess ? '🎉 全部配對成功！' : '💥 遊戲失敗！'}
+            {isSuccess ? '🎉 全部配對成功！你就是政大美食大師' : '💥 遊戲失敗！ 快打開地圖認識這些隱藏美食吧'}
           </h2>
           <button
             onClick={reset}

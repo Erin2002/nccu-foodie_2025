@@ -20,8 +20,8 @@ const PAIRS = [
   },
   {
     id: 4,
-    frontA: '/cards/oden.svg',
-    frontB: '/cards/odenS.svg'
+    frontA: '/cards/milkTea.svg',
+    frontB: '/cards/milkTeaS.svg'
   },
   {
     id: 5,
