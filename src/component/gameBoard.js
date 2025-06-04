@@ -85,7 +85,7 @@ export default function GameBoard() {
               padding: '12px 48px',
               marginTop: 24,
               borderRadius: 8,
-              background: '#4f8cff',
+              background: '#895129',
               color: '#fff',
               border: 'none',
               cursor: 'pointer',
