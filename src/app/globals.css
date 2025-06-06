@@ -82,3 +82,72 @@ body {
   transition: transform 0.2s;
 }
 
+.click-btn:active {
+  transform: scale(0.92);
+  transition: transform 0.08s;
+}
+
+.card {
+  transition: transform 0.15s cubic-bezier(0.4,0,0.2,1);
+}
+.card:active {
+  transform: scale(0.93);
+}
+
+/* 新增於你的全域 CSS 或 style jsx 中 */
+.game-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-modal-content {
+  background: var(--background);
+  color: var(--foreground);
+  border-radius: 20px;
+  box-shadow: 0 4px 32px #0006;
+  padding: 48px 36px 32px 36px;
+  min-width: 320px;
+  max-width: 90vw;
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-modal-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 24px;
+  color: #895129;
+  line-height: 1.3;
+  word-break: break-word;
+}
+
+.game-modal-btn-row {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.click-btn {
+  font-size: 1.4rem;
+  padding: 14px 40px;
+  border-radius: 10px;
+  background: #895129;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 2px 8px #4f8cff33;
+  transition: transform 0.12s cubic-bezier(0.4,0,0.2,1);
+}
+.click-btn:active {
+  transform: scale(0.92);
+}

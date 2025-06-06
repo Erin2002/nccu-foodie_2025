@@ -3,7 +3,11 @@ import { useEffect } from 'react';
 import { useGameStore } from '../app/store/gameStore';
 import Image from 'next/image';
 
+
+
 export default function GameBoard() {
+
+
   const {
     cards,
     flipped,
@@ -23,7 +27,12 @@ export default function GameBoard() {
     return () => clearInterval(timer);
   }, []);
 
+  const totalTime = 30; // 例如 30 秒
+const progress = ((totalTime - timeLeft) / totalTime) * 100; // 百分比
+
   return (
+
+
     <div
       style={{
         width: '100%',
@@ -38,12 +47,14 @@ export default function GameBoard() {
       <h2 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: 32 }}>
         剩餘時間：{timeLeft} 秒
       </h2>
+
+
       <div className="card-board">
         {cards.map((card, idx) => (
           <div
             key={card.id}
             onClick={() => flipCard(idx)}
-            className={card.isFlipped || card.isMatched ? 'flipped' : ''}
+            className={`card ${card.isFlipped || card.isMatched ? 'flipped' : ''}`}
           >
             {(card.isFlipped || card.isMatched) ? (
               <Image src={card.front} alt="card" fill style={{ objectFit: 'contain' }} draggable={false} />
@@ -76,16 +87,24 @@ export default function GameBoard() {
             color: 'white',  // 文字改為白色
             textAlign: 'center'  // 文字置中
           }}>
-            {isSuccess ? '🎉 全部配對成功！你就是政大美食大師' : '💥 遊戲失敗！快出門認識這些隱藏美食吧'}
+            {isSuccess ?  <>
+  
+        🎉 配對成功！<br/>你就是政大美食大師🧑‍🍳
+      </>: <>
+        💥 遊戲失敗！<br/>
+        快出門認識這些隱藏美食吧
+      </>}
           </h2>
+
+          <div style={{ display: 'flex', flexDirection: 'row', gap: 16, marginTop: 12 }}>
           <button
+            className="click-btn"
             onClick={reset}
             style={{
-              fontSize: 24,
+              fontSize: 30,
               padding: '12px 48px',
-              marginTop: 24,
               borderRadius: 8,
-              background: '#4f8cff',
+              background: '#895129',
               color: '#fff',
               border: 'none',
               cursor: 'pointer',
@@ -94,6 +113,33 @@ export default function GameBoard() {
           >
             再玩一次
           </button>
+
+          <a
+        href="https://maps.app.goo.gl/BpEP86Ez3DKUb9gA7"
+        target="_blank"
+        rel="noopener"
+        style={{
+          textDecoration: 'none'
+        }}
+      >
+        <button
+          className="click-btn"
+          style={{
+            fontSize: 30,
+            padding: '12px 48px',
+            borderRadius: 8,
+            background: '#895129',
+            color: '#fff',
+            border: 'none',
+            cursor: 'pointer',
+            width: 'auto'
+          }}
+        >
+          打開地圖
+        </button>
+      </a>
+
+        </div>
         </div>
       )}
     </div>
