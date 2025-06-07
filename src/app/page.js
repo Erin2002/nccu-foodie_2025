@@ -85,25 +85,35 @@ export default function Home() {
             lineHeight: 2,
             fontSize: 18,
             paddingLeft: 24,
-            color: '#222'
+            color: '#222',
+            fontWeight: 'bold'
           }}
         >
           <li>
-
-            點擊<span style={{ fontWeight: 'bold', color: '#895129' }}>「Start」</span>進入遊戲
+          在以美食沙漠聞名的政大
           </li>
           <li>
-            將政大周邊店家與他們特色料理配對
+          其實隱藏著許多三餐好選擇
           </li>
           <li>
-
-            點擊卡牌翻開，配對成功則保持翻開
+            快按下<span style={{ fontWeight: 'bold', color: '#895129' }}>「Start」</span>開始
           </li>
           <li>
-
+            
+          兩兩點擊卡牌
+          </li>
+          <li>
+          將政大周邊店家與招牌菜單配對
+          </li>
+          <li>
+          每次配對正確 卡牌將保持翻開狀態
+          </li>
+          <li>
             30 秒內全部配對成功即勝利
-            <br></br>快來驗證自己認不認識這些政大美食吧
+           
           </li>
+          <li> 快來測試你對政大美食的熟悉度吧🍝</li>
+         
         </ol>
 
       </section>
